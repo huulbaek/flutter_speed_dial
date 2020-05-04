@@ -12,6 +12,7 @@ class AnimatedFloatingButton extends StatelessWidget {
   final double elevation;
   final ShapeBorder shape;
   final Curve curve;
+  final String floatingActionButtonKey;
 
   AnimatedFloatingButton({
     this.visible = true,
@@ -25,6 +26,7 @@ class AnimatedFloatingButton extends StatelessWidget {
     this.shape = const CircleBorder(),
     this.curve = Curves.linear,
     this.onLongPress,
+    this.floatingActionButtonKey
   });
 
   @override
@@ -47,6 +49,7 @@ class AnimatedFloatingButton extends StatelessWidget {
           child: GestureDetector(
             onLongPress: onLongPress,
             child: FloatingActionButton(
+              key: Key(floatingActionButtonKey),
               child: visible ? child : null,
               backgroundColor: backgroundColor,
               foregroundColor: foregroundColor,

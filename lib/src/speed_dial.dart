@@ -56,6 +56,9 @@ class SpeedDial extends StatefulWidget {
   /// The speed of the animation
   final int animationSpeed;
 
+  /// Key for floatingActionButtonKey widget
+  final String floatingActionButtonKey;
+
   SpeedDial({
     this.children = const [],
     this.visible = true,
@@ -77,7 +80,8 @@ class SpeedDial extends StatefulWidget {
     this.shape = const CircleBorder(),
     this.curve = Curves.linear,
     this.onPress,
-    this.animationSpeed = 150
+    this.animationSpeed = 150,
+    this.floatingActionButtonKey
   });
 
   @override
@@ -215,6 +219,7 @@ class _SpeedDialState extends State<SpeedDial> with SingleTickerProviderStateMix
       heroTag: widget.heroTag,
       shape: widget.shape,
       curve: widget.curve,
+      floatingActionButtonKey: widget.floatingActionButtonKey,
     );
 
     return Positioned(
